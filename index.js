@@ -8,6 +8,11 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
+
+http.listen(port, () => {
+    console.log(`http://localhost:${port}/`);
+});
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
@@ -21,6 +26,8 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
+
+
 
 const response = await axios.get(`https://api.dribbble.com/v2/${process.env.API_KEY}`)
 try {
