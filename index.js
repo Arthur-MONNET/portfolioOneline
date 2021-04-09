@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 
 
 
-const response = await axios.get(`https://api.dribbble.com/v2/${process.env.API_KEY}`)
+const response = axios.get(`https://api.dribbble.com/v2/${process.env.API_KEY}`)
 try {
     app.get("/getProject", (req,res) => {
         res.send(response.data)
