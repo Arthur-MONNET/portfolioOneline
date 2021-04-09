@@ -28,10 +28,11 @@ app.use(function (req, res, next) {
 });
 
 
-
-const response = axios.get(`https://api.dribbble.com/v2/${process.env.API_KEY}`)
+const response = axios.get(`https://api.dribbble.com/v2/user/shots?access_token=${process.env.API_KEY}`)
+console.log(response.data)
 try {
     app.get("/getProject", (req,res) => {
+
         res.send(response.data)
     })
 } catch (err) {
