@@ -27,14 +27,15 @@ app.use(function (req, res, next) {
     next();
 });
 
-
-const response = axios.get(`https://api.dribbble.com/v2/user/shots?access_token=${process.env.API_KEY}`)
-console.log(response.data)
-try {
-    app.get("/getProject", (req,res) => {
-
-        res.send(response.data)
-    })
-} catch (err) {
-    console.log(err)
+async function request() {
+    const response = await axios.get(`https://api.dribbble.com/v2/user/shots?access_token=${process.env.API_KEY}`)
+    try {
+        app.get("/getProject", (req, res) => {
+            res.send(response.data)
+        })
+    } catch (err) {
+        console.log(err)
+    }
 }
+
+request()

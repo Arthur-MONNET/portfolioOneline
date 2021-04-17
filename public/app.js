@@ -1,3 +1,33 @@
+
+const requestProjects = async () => {
+    const response = await axios.get(`http://localhost:3000/getProject`)
+
+    try {
+        return response
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+requestProjects().then(response => {
+    console.log(response.data)
+    var data = response.data
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+//pointer
 let pointer = document.querySelector("#pointer");
 let alla = document.querySelectorAll("a");
 document.addEventListener('mousemove', logKey);
