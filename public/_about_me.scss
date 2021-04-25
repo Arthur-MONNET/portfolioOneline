@@ -1,0 +1,64 @@
+#illuMe {
+  height: 100vh;
+
+}
+
+#imgMe {
+  position: fixed;
+  height: 80vh;
+  bottom: -10vh;
+  left: calc(100vw - 1500px + 60px);
+  transition: bottom ease-out 0.5s, left ease-out 0.5s;
+}
+
+#imgMeBack {
+  position: fixed;
+  height: 140vh;
+  bottom: -20vh;
+  left: calc(100vw - 1500px - 60px);
+  transition: bottom ease-out 0.5s, left ease-out 0.5s;
+  filter: blur(2px);
+}
+
+#descMe {
+
+}
+
+#download {
+
+}
+
+#titleDescMe {
+
+}
+
+#svg1 {
+  transition: bottom ease-out 0.5s, left ease-out 0.5s;
+  left: calc(100vw - 1500px + 50px);
+  height: 50vh;
+  bottom: 5vh;
+  position: fixed;
+}
+
+#svg2 {
+  transition: bottom ease-out 0.5s, left ease-out 0.5s;
+  left: calc(100vw - 1500px + 450px);
+  bottom: 35vh;
+  height: 50vh;
+  position: fixed;
+
+}
+@media screen and (min-width: 1650px) {
+  #svg1{
+    left: 50px;
+  }
+  #svg2{
+    left: 450px;
+  }
+  #imgMeBack{
+    left: -60px;
+  }
+  #imgMe{
+    left: 60px;
+  }
+}

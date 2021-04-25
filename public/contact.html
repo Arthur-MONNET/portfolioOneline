@@ -6,42 +6,35 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="_style.scss" rel="stylesheet">
+    <link href="_contact.scss" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 <body>
 <nav>
     <a href="index.html"><img src="" id="iconNav"></a>
-    <div id="menu">
-        <a href="projects.html"><h4 class="wordMenu">Réalisations</h4></a>
-        <a href="aboutMe.html"><h4 class="wordMenu">À propos</h4></a>
+    <div id="menu" style="color: white">
+        <a href="index.html"><h4 class="wordMenu">Home</h4></a>
+        <a href="projects.html"><h4 class="wordMenu">Works</h4></a>
+        <a href="aboutMe.html"><h4 class="wordMenu">About me</h4></a>
         <a href="contact.html"><h4 class="wordMenu">Contact</h4></a>
     </div>
 </nav>
-<div id="firstPage">
-    <div id="presFirstPage">
-        <h1 id="name">Arthur Monnet</h1>
-        <h2 id="underName">CREATIVE DEVELOPER</h2>
-    </div>
-    <div id="firstPageLine"></div>
-    <img src="" id="secondIcon">
-</div>
-
-
-<div id="underFistPage">
-    <div id="slideAndImg">
-        <div id="contentSlide">
-            <div id="arrows">
-                <img src="" id="arrowLeft">
-                <img src="" id="arrowRight">
-            </div>
-            <img class="imgProject">
-            <a href="#" id="linkCreations">
-                <h5>Voir toutes les creations</h5>
-            </a>
+<div id="scroll-wrap">
+    <div id="firstPage">
+        <div class="data_contact">
+            <h3></h3>
+            <h5></h5>
         </div>
-        <img src="" id="imgSlide">
+        <svg xmlns="http://www.w3.org/2000/svg" width="93.93" height="168.919" viewBox="0 0 93.93 168.919">
+            <path id="polygon_1" d="M12320,14613.7l55.421,167.919h37.127l-55.017-167.919Z" transform="translate(-12319.309 -14613.203)" fill="#0A192E" stroke="#707070" stroke-width="1"/>
+        </svg>
+        <div class="data_contact"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="93.93" height="168.919" viewBox="0 0 93.93 168.919">
+            <path id="polygon_2" d="M12320,14613.7l55.421,167.919h37.127l-55.017-167.919Z" transform="translate(-12319.309 -14613.203)" fill="#0A192E" stroke="#707070" stroke-width="1"/>
+        </svg>
+        <div class="data_contact"></div>
     </div>
-    <div id="decoSlide"></div>
 </div>
 <div id="pointer" style="transform: scale(1)"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
