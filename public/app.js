@@ -28,7 +28,10 @@ requestProjects().then(response => {
             if (dataProjects[i].tags[j].indexOf("project") !== -1) {
                 nbProject++
                 indexProject = dataProjects[i].tags[j].substring(dataProjects[i].tags[j].indexOf("project") + 7, dataProjects[i].tags[j].indexOf("project") + 8)
-                listProject[indexProject] = new Object();
+                if(listProject[indexProject]===0){
+                    listProject[indexProject] = new Object();
+                }
+
 
                 console.log(indexProject)
 
