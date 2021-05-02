@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
                 order = "row", orderText = ""
             }
         }
-    },100)
+    },1000)
 
 
 

@@ -21,7 +21,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", () => {
     setTimeout(()=>{
         changeSlide(numSlide,0)
-    },100)
+    },1000)
 })
 
 function changeSlide(num,mov){

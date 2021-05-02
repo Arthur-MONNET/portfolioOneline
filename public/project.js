@@ -13,5 +13,5 @@ window.addEventListener("load", () => {
         text1.innerHTML= listProject[projectIndex].desc1
         image2.src = listProject[projectIndex].img2
         text2.innerHTML= listProject[projectIndex].desc2
-    },100)
+    },1000)
 })

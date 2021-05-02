@@ -129,6 +129,6 @@ window.addEventListener("load", () => {
         function mouseIn(e) {
             pointer.style.display = `block`;
         }
-    },200)
+    },1100)
 
 })

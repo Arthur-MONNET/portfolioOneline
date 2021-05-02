@@ -11,5 +11,5 @@ document.addEventListener("mousemove", (e) => {
 })
 setTimeout(()=>{
     descMe.innerHTML=dataUser.bio
-},100)
+},1000)
 
