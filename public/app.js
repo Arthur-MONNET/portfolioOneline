@@ -73,7 +73,7 @@ requestProjects().then(response => {
     console.log("length  " + listProject[2].title.length)
     console.log(listProject)
 
-    //nbProject=nbProject/2
+    nbProject=nbProject/2
 })
 const requestUser = async () => {
     const response = await axios.get(`https://portfolioarthur.herokuapp.com/getUser`)
