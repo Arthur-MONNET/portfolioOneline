@@ -42,8 +42,8 @@ requestProjects().then(response => {
                     listProject[indexProject].title = title
                     listProject[indexProject].desc1 = desc1
                 } else if (img2 !== 0) {
-                    listProject[indexProject].img1 = img2
-                    listProject[indexProject].desc1 = desc2
+                    listProject[indexProject].img2 = img2
+                    listProject[indexProject].desc2 = desc2
                 }
             }
             if (dataProjects[i].tags[j].indexOf("image") !== -1) {
