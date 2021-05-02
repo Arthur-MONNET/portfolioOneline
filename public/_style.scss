@@ -17,6 +17,7 @@ a {
 body{
   width: 100vw;
   overflow-x: hidden;
+  background: white;
 }
 
 nav{
@@ -28,11 +29,11 @@ nav{
   position: fixed;
   width: calc(100vw - 100px);
   margin: 0 50px;
-  height: 150px;
+  height: 100px;
 }
 #iconNav{
-  width : 90px;
-  height : 90px;
+  width : 60px;
+  height : 60px;
   margin: 30px;
 }
 #menu{
@@ -42,6 +43,11 @@ nav{
   justify-content: space-around;
   width: 650px;
   transition: color 1s ease;
+}
+.wordMenu{
+  font-size: 20px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
 }
 #firstPage{
   top : 0;
@@ -163,8 +169,8 @@ nav{
   transition: transform 500ms, background 100ms;
   width: 10px;
   height: 10px;
-  background: #ec8600;
-  border: solid 1px #ec8600;
+  background:#f74f1c;
+  border: solid 1px #f74f1c;
   border-radius: 50%;
   position: fixed;
   z-index: 100;
@@ -174,7 +180,7 @@ nav{
 #titleProjects{
   width: 100vw;
   height: 40vh;
-  padding-top: 150px;
+  padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;

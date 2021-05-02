@@ -7,12 +7,21 @@ let numSlide = 1
 window.addEventListener("scroll", () => {
     if (window.scrollY > window.innerHeight - 80) {
         menu.style.color = "black"
+
+        document.querySelectorAll(".cls-1").forEach(logoSvg=>{
+        logoSvg.style = "fill:#000"
+        })
     } else {
         menu.style.color = "white"
+        document.querySelectorAll(".cls-1").forEach(logoSvg=>{
+            logoSvg.style = "fill:#fff"
+        })
     }
 })
 window.addEventListener("load", () => {
-    changeSlide(numSlide,0)
+    setTimeout(()=>{
+        changeSlide(numSlide,0)
+    },100)
 })
 
 function changeSlide(num,mov){
@@ -21,39 +30,40 @@ function changeSlide(num,mov){
     }
     textTitle.innerHTML =""
 
-    for (let i = 0; i < dataDribbble[num].title.length; i++) {
-        if (dataDribbble[num].title.substring(i,i+1)==="_"){
+    for (let i = 0; i < listProject[num].title.length; i++) {
+        if (listProject[num].title.substring(i,i+1)==="_"){
             textTitle.innerHTML += `<div class="spaceTitle"></div>`
         }else{
-            textTitle.innerHTML +=`<h2>${dataDribbble[num].title.substring(i,i+1).toUpperCase()}</h2>`
+            textTitle.innerHTML +=`<h2>${listProject[num].title.substring(i,i+1).toUpperCase()}</h2>`
         }
     }
 
-    arrows.style = `color : ${dataDribbble[num].description.substring(dataDribbble[num].description.indexOf("$color") + 7, dataDribbble[num].description.indexOf("!color"))}aa`
-    document.querySelector("#imgSlide").src = dataDribbble[num].images.hidpi
-    document.querySelector("#descProject").innerHTML = dataDribbble[num].description.substring(dataDribbble[num].description.indexOf("$desc") + 6, dataDribbble[num].description.indexOf("!desc"))
+    arrows.style = `color : ${listProject[num].color}aa`
+    document.querySelector("#imgSlide").src = listProject[num].img1
+    document.querySelector("#descProject").innerHTML = listProject[num].desc1
     linkCreation.addEventListener("mouseover", () => {
-        linkCreation.style = `border: ${dataDribbble[num].description.substring(dataDribbble[num].description.indexOf("$color") + 7, dataDribbble[num].description.indexOf("!color"))}00 solid 3px; background: ${dataDribbble[num].description.substring(dataDribbble[num].description.indexOf("$color") + 7, dataDribbble[num].description.indexOf("!color"))}99; color : white`
+        linkCreation.style = `border: ${listProject[num].color}00 solid 3px; background: ${listProject[num].color}99; color : white`
     })
     linkCreation.addEventListener("mouseout", () => {
-        linkCreation.style = `border: ${dataDribbble[num].description.substring(dataDribbble[num].description.indexOf("$color") + 7, dataDribbble[num].description.indexOf("!color"))}99 solid 3px`
+        linkCreation.style = `border: ${listProject[num].color}99 solid 3px`
     })
-    linkCreation.style = `border: ${dataDribbble[num].description.substring(dataDribbble[num].description.indexOf("$color") + 7, dataDribbble[num].description.indexOf("!color"))}99 solid 3px`
-    document.querySelector("#decoSlide").style = `background : ${dataDribbble[num].description.substring(dataDribbble[num].description.indexOf("$color") + 7, dataDribbble[num].description.indexOf("!color"))}`
+    linkCreation.style = `border: ${listProject[num].color}99 solid 3px`
+    document.querySelector("#decoSlide").style = `background : ${listProject[num].color}`
 }
 
 arrowLeft.addEventListener("click", ()=> {
     numSlide--
-    if (numSlide<0){
-        numSlide = dataDribbble.length-1
+    if (numSlide<1){
+        numSlide = nbProject
     }
     changeSlide(numSlide,-1)
 })
 arrowRight.addEventListener("click", ()=> {
     numSlide++
-    if (numSlide>dataDribbble.length-1){
-        numSlide = 0
+    if (numSlide>nbProject){
+        numSlide = 1
     }
+    console.log(numSlide)
     changeSlide(numSlide,1)
 })
 

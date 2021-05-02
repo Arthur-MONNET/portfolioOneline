@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-async function request() {
+async function requestShots() {
     const response = await axios.get(`https://api.dribbble.com/v2/user/shots?access_token=${process.env.API_KEY}`)
     try {
         app.get("/getProject", (req, res) => {
@@ -37,5 +37,16 @@ async function request() {
         console.log(err)
     }
 }
+async function requestUser() {
+    const response = await axios.get(`https://api.dribbble.com/v2/user/?access_token=${process.env.API_KEY}`)
+    try {
+        app.get("/getUser", (req,res) => {
+            res.send(response.data)
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
 
-request()
+requestShots()
+requestUser()
