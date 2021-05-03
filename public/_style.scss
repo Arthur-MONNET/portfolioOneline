@@ -98,13 +98,14 @@ nav{
 }
 #slideAndImg{
   height: 60vh;
-  width: 80vw;
+  width: 90vw;
+  margin-left: 10vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 #contentSlide{
-  width: 40%;
+  width: 32vw;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -113,9 +114,11 @@ nav{
 }
 #imgSlide{
   background: #d0d0e7;
-  width: 37vw;
+  transition: background-image 0.5s;
+  width: 45vw;
   height:32vw;
-  clip-path: polygon(0 50%,9.25vw 100% ,27.75vw 100% ,100% 50% ,27.75vw 0 ,9.25vw 0 );
+  object-fit: cover;
+  //clip-path: polygon(0 50%,9.25vw 100% ,27.75vw 100% ,100% 50% ,27.75vw 0 ,9.25vw 0 );
   z-index: 1;
 }
 #decoSlide{
@@ -133,7 +136,7 @@ nav{
   width: 200px;
   height: 40px;
   font-size: 60px;
-  transition: color 1s ;
+  transition: color 1s;
 }
 .imgProject{
   width: 100%;
@@ -185,6 +188,11 @@ nav{
   align-items: center;
   justify-content: center;
 }
+#titleProjects h1{
+  font-family: 'Raleway', sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+}
 #listProjects{
   display: flex;
   flex-direction: column;
@@ -235,6 +243,9 @@ nav{
   align-items: center;
   flex-direction:column ;
 }
+.none{
+  display: none;
+}
 .projects h3{
   width: 200px;
   font-size: 70px;
@@ -243,12 +254,13 @@ nav{
 }
 #contentSlide h2{
   font-family: 'Raleway', sans-serif;
-  font-size: 90px;
+  font-size: 70px;
   font-weight: 700;
-  margin: 3vh 0;
 }
 #descProject{
+  transition: opacity 1s;
   text-align: center;
+  opacity : 0;
   font-size: 25px;
   width: 540px;
   margin-bottom: 3vh;
@@ -260,9 +272,15 @@ nav{
 #textTitle{
   display: flex;
   flex-direction: row;
+  margin: 3vh 0;
+}
+#textTitle h2{
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.1s,margin-left 0.1s;
 }
 .spaceTitle {
-  width: 40px;
+  width: 20px;
 }
 
 
