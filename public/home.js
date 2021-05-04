@@ -83,13 +83,13 @@ function changeSlide(num, mov) {
         for (let i = listProject[numSlide].title.length-2; i > -1; i--) {
             setTimeout(() => {
                 letters[letters.length-1-i].style = `left:${letters[letters.length-1-i].style.left};margin-top:${letters[letters.length-1-i].style.marginTop};margin-left :0;opacity:1`
-            }, 50 * i)
+            }, 10 * i)
         }
     }else{
         for (let i = 0; i < listProject[numSlide].title.length - 1; i++) {
             setTimeout(() => {
                 letters[i].style = `left:${letters[i].style.left};margin-top:${letters[i].style.marginTop};margin-left :0;opacity:1`
-            }, 50 * i)
+            }, 10 * i)
         }
     }
 
@@ -113,7 +113,7 @@ arrowLeft.addEventListener("click", () => {
     for (let i = listProject[numSlide].title.length-2; i > -1; i--) {
         setTimeout(() => {
             letters[letters.length-1-i].style = `left:${letters[letters.length-1-i].style.left};margin-top:${letters[letters.length-1-i].style.marginTop};margin-left :50px;opacity:0`
-        }, 50 * i)
+        }, 10 * i)
         nbLetters++;
     }
     document.querySelector("#descProject").style="opacity:0"
@@ -124,7 +124,7 @@ arrowLeft.addEventListener("click", () => {
     console.log(numSlide)
     setTimeout(() => {
         changeSlide(numSlide, -1)
-    }, 50 * nbLetters)
+    }, 10 * nbLetters+50)
 
 })
 arrowRight.addEventListener("click", () => {
@@ -133,7 +133,7 @@ arrowRight.addEventListener("click", () => {
     for (let i = 0; i < listProject[numSlide].title.length - 1; i++) {
         setTimeout(() => {
             letters[i].style = `left:${letters[i].style.left};margin-top:${letters[i].style.marginTop};margin-left :-50px;opacity:0`
-        }, 50 * i)
+        }, 10 * i)
         nbLetters++;
     }
     document.querySelector("#descProject").style="opacity:0"
@@ -144,7 +144,7 @@ arrowRight.addEventListener("click", () => {
     console.log(numSlide)
     setTimeout(() => {
         changeSlide(numSlide, 1)
-    }, 50 * nbLetters)
+    }, 10 * nbLetters+50)
 })
 
 
