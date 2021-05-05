@@ -117,12 +117,12 @@ window.addEventListener("load", () => {
 
         function logKeyOver(e) {
             pointer.style.transform = `scale(2)`;
-            pointer.style.background = "#f74f1c00";
+            pointer.style.background = "#00000000";
         }
 
         function logKeyNoOver(e) {
             pointer.style.transform = `scale(1)`;
-            pointer.style.background = "#f74f1c";
+            pointer.style.background = "#000000";
         }
 
         function mouseout(e) {
