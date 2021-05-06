@@ -76,11 +76,17 @@ nav{
   height :100%;
 }
 #presFirstPage{
-  width :350px;
+  width :40vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+}
+#upperName{
+  font-family: 'kanit', sans-serif;
+  font-size: 1.6vw;
+  font-weight: 300;
+  color: #ec8600;
 }
 #secondIcon{
   width: 250px;
@@ -157,13 +163,10 @@ nav{
   margin: 0 100px;
 }
 #name{
-  width: 350px;
-  text-align: end;
-  font-size: 50px;
-}
-#underName{
-  width: 350px;
-  text-align: end;
+  color : white;
+  font-size: 3.7vw;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
 }
 #pointer{
   transition: transform 500ms, background 100ms;
@@ -209,11 +212,11 @@ nav{
   object-fit: cover;
   transition: margin-top 1s ease-out;
 }
-#underName{
+#underName1, #underName2{
   color: white;
-}
-#name{
-  color: white;
+  font-size: 4.7vw;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
 }
 .numProject{
   height: 120%;

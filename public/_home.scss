@@ -1,6 +1,9 @@
 body{
   height : 200vh;
 }
+#firstPage{
+  justify-content: flex-start;
+}
 .button{
   transition: transform 0.2s, opacity 0.1s;
 }
