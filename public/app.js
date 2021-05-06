@@ -7,7 +7,7 @@ window.addEventListener("load", function (event) {
 });
 
 const requestProjects = async () => {
-    const response = await axios.get(`https://portfolioarthur.herokuapp.com/getProject`)
+    const response = await axios.get(`./getProject`)
     try {
         return response
     } catch (err) {
@@ -28,7 +28,7 @@ requestProjects().then(response => {
             if (dataProjects[i].tags[j].indexOf("project") !== -1) {
                 nbProject++
                 indexProject = dataProjects[i].tags[j].substring(dataProjects[i].tags[j].indexOf("project") + 7, dataProjects[i].tags[j].indexOf("project") + 8)
-                if(!listProject[indexProject]){
+                if (!listProject[indexProject]) {
                     listProject[indexProject] = new Object();
                 }
 
@@ -76,10 +76,10 @@ requestProjects().then(response => {
     console.log("length  " + listProject[2].title.length)
     console.log(listProject)
 
-    nbProject=nbProject/2
+    nbProject = nbProject / 2
 })
 const requestUser = async () => {
-    const response = await axios.get(`https://portfolioarthur.herokuapp.com/getUser`)
+    const response = await axios.get(`./getUser`)
     try {
         return response
     } catch (err) {
@@ -97,41 +97,43 @@ window.addEventListener("scroll", () => {
 
 
 window.addEventListener("load", () => {
+
+    let pointer = document.querySelector("#pointer");
+    document.addEventListener('mouseover', mouseIn)
+    document.addEventListener('mouseout', mouseout)
+    document.addEventListener('mousemove', logKey);
+    function logKey(e) {
+        pointer.style.top = `${e.clientY - 6}px`;
+        pointer.style.left = `${e.clientX - 6}px`;
+    }
+
+    function logKeyOver(e) {
+        pointer.style.transform = `scale(2)`;
+        pointer.style.background = "#f74f1c00";
+    }
+
+    function logKeyNoOver(e) {
+        pointer.style.transform = `scale(1)`;
+        pointer.style.background = "#f74f1c";
+    }
+
+    function mouseout(e) {
+        pointer.style.display = `none`;
+    }
+
+    function mouseIn(e) {
+        pointer.style.display = `block`;
+    }
+
 //pointer
-    setTimeout(()=>{
-        let pointer = document.querySelector("#pointer");
+    setTimeout(() => {
+
         let alla = document.querySelectorAll("a, .button");
-        document.addEventListener('mousemove', logKey);
+
         alla.forEach(a => {
             a.addEventListener('mouseover', logKeyOver);
             a.addEventListener('mouseout', logKeyNoOver);
         })
-
-        document.addEventListener('mouseover', mouseIn)
-        document.addEventListener('mouseout', mouseout)
-
-        function logKey(e) {
-            pointer.style.top = `${e.clientY - 6}px`;
-            pointer.style.left = `${e.clientX - 6}px`;
-        }
-
-        function logKeyOver(e) {
-            pointer.style.transform = `scale(2)`;
-            pointer.style.background = "#f74f1c00";
-        }
-
-        function logKeyNoOver(e) {
-            pointer.style.transform = `scale(1)`;
-            pointer.style.background = "#f74f1c";
-        }
-
-        function mouseout(e) {
-            pointer.style.display = `none`;
-        }
-
-        function mouseIn(e) {
-            pointer.style.display = `block`;
-        }
-    },1100)
+    }, 1100)
 
 })
