@@ -4,6 +4,7 @@ const text1 = document.querySelector("#text1 p")
 const image1 = document.querySelector("#img1")
 const text2 = document.querySelector("#text2 p")
 const image2 = document.querySelector("#img2")
+const link = document.querySelector("#webSiteLink")
 let params = (new URL(document.location)).searchParams;
 let projectIndex = parseInt(params.get('project'))
 window.addEventListener("load", () => {
@@ -13,5 +14,6 @@ window.addEventListener("load", () => {
         text1.innerHTML= listProject[projectIndex].desc1
         image2.src = listProject[projectIndex].img2
         text2.innerHTML= listProject[projectIndex].desc2
+        link.href=listProject[projectIndex].linkP
     },1000)
 })

@@ -16,14 +16,14 @@ const requestProjects = async () => {
 }
 let dataProjects;
 let nbProject = 0
-let img1, img2, desc1, desc2, title, color, indexProject, listProject = []
+let img1, img2, desc1, desc2,linkP, title, color, indexProject, listProject = []
 requestProjects().then(response => {
     console.log(response.data)
     dataProjects = response.data
 
 
     for (let i = 0; i < dataProjects.length; i++) {
-        indexProject = 0, img1 = 0, desc1 = 0, img2 = 0, desc2 = 0, title = 0, color = 0;
+        indexProject = 0, img1 = 0, desc1 = 0, img2 = 0, desc2 = 0, title = 0,linkP=0, color = 0;
         for (let j = 0; j < dataProjects[i].tags.length; j++) {
             if (dataProjects[i].tags[j].indexOf("project") !== -1) {
                 nbProject++
@@ -41,6 +41,7 @@ requestProjects().then(response => {
                     listProject[indexProject].color = color
                     listProject[indexProject].title = title
                     listProject[indexProject].desc1 = desc1
+                    listProject[indexProject].linkP = linkP
                 } else if (img2 !== 0) {
                     listProject[indexProject].img2 = img2
                     listProject[indexProject].desc2 = desc2
@@ -53,7 +54,9 @@ requestProjects().then(response => {
                         listProject[indexProject].title = dataProjects[i].title.replaceAll("_", " ")
                         listProject[indexProject].img1 = dataProjects[i].images.hidpi
                         listProject[indexProject].desc1 = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$desc") + 6, dataProjects[i].description.indexOf("!desc"))
+                        listProject[indexProject].linkP = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$link") + 6, dataProjects[i].description.indexOf("!link"))
                     } else {
+                        linkP = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$link") + 6, dataProjects[i].description.indexOf("!link"))
                         img1 = dataProjects[i].images.hidpi
                         color = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$color") + 7, dataProjects[i].description.indexOf("!color"))
                         title = dataProjects[i].title.replaceAll("_", " ")
